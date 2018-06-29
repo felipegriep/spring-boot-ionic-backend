@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Endereco implements Serializable {
-    private static final long serialVersionUID = 1L;
+    public class Endereco implements Serializable {
+        private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
