@@ -2,8 +2,11 @@ package com.felipegriep.cursomc.services;
 
 import com.felipegriep.cursomc.domain.Categoria;
 import com.felipegriep.cursomc.repositories.CategoriaRepository;
+import com.felipegriep.cursomc.services.exceptions.DataIntegrityException;
 import com.felipegriep.cursomc.services.exceptions.ObjectNotFoundException;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 
@@ -29,5 +32,14 @@ public class CategoriaService {
     public Categoria update(Categoria obj) {
         find(obj.getId());
         return repo.save(obj);
+    }
+
+    public void delete(Integer id) {
+        find(id);
+        try {
+            repo.deleteById(id);
+        } catch (DataIntegrityViolationException exception) {
+            throw new DataIntegrityException("Não é possível excluir uma categoria que possui produtos.");
+        }
     }
 }
