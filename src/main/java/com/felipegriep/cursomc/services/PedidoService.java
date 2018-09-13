@@ -1,11 +1,9 @@
 package com.felipegriep.cursomc.services;
 
 import com.felipegriep.cursomc.domain.ItemPedido;
-import com.felipegriep.cursomc.domain.Pagamento;
 import com.felipegriep.cursomc.domain.PagamentoComBoleto;
 import com.felipegriep.cursomc.domain.Pedido;
 import com.felipegriep.cursomc.domain.enums.EstadoPagamento;
-import com.felipegriep.cursomc.repositories.ClienteRepository;
 import com.felipegriep.cursomc.repositories.ItemPedidoRepository;
 import com.felipegriep.cursomc.repositories.PagamentoRepository;
 import com.felipegriep.cursomc.repositories.PedidoRepository;
