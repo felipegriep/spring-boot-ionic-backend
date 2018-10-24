@@ -3,6 +3,7 @@ package com.felipegriep.cursomc.config;
 import com.felipegriep.cursomc.services.DBService;
 import com.felipegriep.cursomc.services.EmailService;
 import com.felipegriep.cursomc.services.MockEmailService;
+import com.felipegriep.cursomc.services.SMTPEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,6 @@ public class TestConfig {
 
     @Bean
     public EmailService emailService() {
-        return new MockEmailService();
+        return new SMTPEmailService();
     }
 }
